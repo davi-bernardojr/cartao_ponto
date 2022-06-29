@@ -25,7 +25,7 @@ export const CardFront = styled.div`
         background-color: rgb(255, 255, 255);
         width: 2.4cm;
         height: 3.2cm;
-        margin: 0.1cm 0 0.2cm 0;
+        margin: 0.1cm 0 0.1cm 0;
     }
 
     .nome {

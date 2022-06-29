@@ -1,25 +1,43 @@
-import { CardBack, Barcode } from './CardBack'
+import { CardBack, Bar } from './CardBack'
+import Barcode from 'react-jsbarcode'
 
-export const Card_Back = () => {
+type dataValues = {
+    codigo : string
+    nome : string
+    nomeEmpresa : string
+    unidade : string
+    obs : string
+}
+
+export const Card_Back = ( {codigo, nome, nomeEmpresa, unidade, obs} : dataValues ) => {
     return (
         <CardBack>
             <div className="content">
-                <p className="matricula">0000000</p>
-                <p className="nome">Nome completo</p>            
-                <p className="empresa">Nome Da Empresa</p>
-                <p className="unidade">Unidade da empresa qdo houver</p>
+                <p className="matricula">{codigo == "" ? '0000000' : codigo}</p>
+                <p className="nome">{nome == "" ? "Nome completo" : nome}</p>
+                <p className="empresa">{nomeEmpresa == '' ? "Nome Da Empresa" : nomeEmpresa}</p>
+                <p className="unidade">{unidade == "" ? "Unidade" : unidade}</p>
 
                 <div className="instrucoes">
                     <p>
-                        Algumas instruções qdo houver 
-                        Algumas instruções qdo houver 
-                        Algumas instruções qdo houver 
-                        Algumas instruções qdo houver 
+                        {obs == '' ? '' : obs}
                     </p>
                 </div>
-                
+
             </div>
-            <Barcode></Barcode>
+            <Bar>
+                <Barcode 
+                    className="barcode"
+                    value={codigo == "" ? '0000000' : codigo}                    
+                    options={{ 
+                        width: 2,
+                        height: 30,
+                        displayValue: false, 
+                        format: 'code128'
+                    }} 
+
+                />
+            </Bar>            
         </CardBack>
     )
 }

@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+
 export const CardBack = styled.div`
     width: 8.5cm;
     height: 5.5cm;
@@ -13,7 +14,8 @@ export const CardBack = styled.div`
     border: 1px solid rgb(255,0,0);
 
     .content {
-        /* height: 4.3cm; */
+        padding:0;
+        height: 4.3cm;
         width: 5.5cm;
         margin: 0cm 0.2cm 0.2cm 1cm;
         border: 1px solid rgb(255,0,0);
@@ -42,8 +44,10 @@ export const CardBack = styled.div`
     }
 `
 
-export const Barcode = styled.div`
-    width: 1.5cm;
-    height: 4cm;
-    border: 1px solid rgb(255,0,0);
+export const Bar = styled.div`
+    position: fixed;
+    left: 185px;
+    margin: 0 -65px 0 0;
+    /* border: 1px solid rgb(255,0,0); */
+    transform: rotate(-90deg);
 `
